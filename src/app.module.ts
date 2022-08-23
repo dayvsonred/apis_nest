@@ -5,11 +5,14 @@ import { AppService } from './app.service';
 import { PersonController } from './person/person.controller';
 import { PersonService } from './person/person.service';
 import { UsersModule } from './users/users.module';
+import * as dotenv from 'dotenv'
+dotenv.config()
+
 
 @Module({
   imports: [
     UsersModule,
-    MongooseModule.forRoot('mongodb+srv://outros:Z90TJtXpUdkkZP6b@cluster0.muxczfl.mongodb.net/test?authSource=admin&replicaSet=atlas-is65td-shard-0&readPreference=primary&appname=MongoDB%20Compass&ssl=true')
+    MongooseModule.forRoot(process.env.MONGO)
   ],
   controllers: [AppController, PersonController],
   providers: [AppService, PersonService],
