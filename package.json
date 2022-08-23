@@ -1,6 +1,6 @@
 {
   "name": "api_sell",
-  "version": "1.0.1",
+  "version": "0.0.1",
   "engines": {
     "node": "12.11.1"
   },
